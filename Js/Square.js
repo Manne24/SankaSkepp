@@ -1,19 +1,23 @@
-class TargetSquare extends Domer {
+class Square extends Domer {
   _content = "";
-  _gameBoard;
+  _posX = 0;
+  _posY = 0;
+  _ship;
 
-  constructor(_gameBoard) {
+  constructor(posX,posY) {
     super();
-    this._gameBoard = GameBoard;
+    this._ship =  new Ship();
+    
   }
-
   onSquareClick() {
     this._content = "MISS";
+
   }
 
   render(html) {
     return html`
       <div click="onSquareClick" class="square">${this._content}</div>
+
     `;
   }
 }

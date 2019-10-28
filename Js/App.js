@@ -1,23 +1,20 @@
 class App extends Domer {
-    
-    
-    constructor(){
-        super()
-        this.gameBoard = new GameBoard();
+  constructor() {
+    super();
+    this.gameBoard = new GameBoard();
+    this.gameBoard.printPlayerSquare()
+  }
 
-    }
-
-    render(html){
-        return html`
-        <section>
+  render(html) {
+    return html`
+      <section>
         <h1>Sänka Skepp</h1>
-        <hr>
+        <hr />
         ${this.gameBoard}
-        <hr>
-        </section>
-                
-    `
-    }
+        <hr />
+      </section>
+    `;
+  }
 }
 
 new App();
