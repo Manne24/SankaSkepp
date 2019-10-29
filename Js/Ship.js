@@ -1,14 +1,15 @@
 class Ship extends Domer {
 
-  location = [[],[]];
-  hits = []; 
-  size = []; 
+ 
 
   
   constructor() {
     super();
   }
 
+ get model(){
+   return this._model;
+ }
   render(html) {
     return html`
       <section></section>
