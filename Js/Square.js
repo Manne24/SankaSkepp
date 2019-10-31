@@ -1,23 +1,19 @@
 class Square extends Domer {
   _content = "";
-  _ship = false;
-  _posX= 0;
-  _posY = 0;
-
-  constructor(gameBoard, posX , posY) {
+  _miss = `<div id="miss">MISS</div>`;
+  _hit = `<div id="hit">HIT</div>`;
+  
+  constructor() {
     super();
-    
   }
 
-  setShip(){
-    this._playerBoard[3][5].setShip()
-  }
   
   onSquareClick() {
     if(this._content === "" ) {
-      this._content = "MISS";
-    } 
-
+      this._content = `${this._miss}`;
+    }else if (this._content !== "") {
+      this._content = `${this._hit}`;
+    }
   }
 
 

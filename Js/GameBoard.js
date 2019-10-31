@@ -1,10 +1,10 @@
 class GameBoard extends Domer {
   _playerBoard = [];
-  _playerShip = [];
 
 
   constructor() {
     super();
+
   }
 
   //Skapar Grid
@@ -18,6 +18,12 @@ class GameBoard extends Domer {
     console.log(this._playerBoard);
   }
 
+  addShip(ship) {
+     for (let i = 0; i < ship.shipSize; i++) {
+      this._playerBoard[ship.posX + i][ship.posY]._content = ship.shipModel[i];
+     }
+  }
+
   get playerBoard() {
     return this._playerBoard.flat(); // secret magic stuff (Sätter in min array och gör den 2D )
   }
@@ -26,6 +32,7 @@ class GameBoard extends Domer {
   render(html) {
     return html`
       <section id="containter">
+        <h3>Try To locate Enemy Ships</h3>
         <div id="game-board">
           ${this.playerBoard}
         </div>
