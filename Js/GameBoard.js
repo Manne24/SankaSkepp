@@ -1,10 +1,8 @@
 class GameBoard extends Domer {
   _playerBoard = [];
 
-
   constructor() {
     super();
-
   }
 
   //Skapar Grid
@@ -15,19 +13,20 @@ class GameBoard extends Domer {
         this._playerBoard[i].push(new Square(this, i, j));
       }
     }
-    console.log(this._playerBoard);
+    // console.log(this._playerBoard);
   }
 
+  // Lägger till Ship vertikalt
   addShip(ship) {
-     for (let i = 0; i < ship.shipSize; i++) {
-      this._playerBoard[ship.posX + i][ship.posY]._content = ship.shipModel[i];
-     }
+    for (let i = 0; i < ship._shipSize; i++) {
+      this._playerBoard[ship._posX + i][ship._posY]._content =
+        ship._shipModel[i];
+    }
   }
 
   get playerBoard() {
     return this._playerBoard.flat(); // secret magic stuff (Sätter in min array och gör den 2D )
   }
-
 
   render(html) {
     return html`

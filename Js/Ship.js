@@ -1,33 +1,31 @@
 class Ship extends Domer {
-shipSize;
-shipModel;
-posX = 0; 
-posY = 0;
+  _shipSize;
+  _shipModel;
+  _posX = 0;
+  _posY = 0;
 
-  
-  constructor(size, posX , posY) {
+  constructor(size, posX, posY) {
     super();
-    this.shipSize = size;
-    this.posX = posX;
-    this.posY = posY;
+    this._shipSize = size;
+    this._posX = posX;
+    this._posY = posY;
     this.setSize();
   }
 
+  // skapar skepp modelen
   setSize() {
-    if(this.shipSize === 2) {
-      this.shipModel = [" " , "  "];
-  }else if(this.shipSize === 3) {
-    this.shipModel = ["  " , "  " ,"  "];
-  }else if(this.shipSize === 4) {
-    this.shipModel = ["  " , "  " , "  ", "  "];
+    if (this._shipSize === 2) {
+      this._shipModel = [" ", "  "];
+    } else if (this._shipSize === 3) {
+      this._shipModel = ["  ", "  ", "  "];
+    } else if (this._shipSize === 4) {
+      this._shipModel = ["  ", "  ", "  ", "  "];
+    }
   }
-}
-
-
 
   render(html) {
     return html`
-      <section>${this.shipModel}</section>
+      <section>${this._shipModel}</section>
     `;
   }
 }
